@@ -16,6 +16,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
+    await bot.load_extension("cogs.utilitaires")
     print(f"✅ {bot.user} est connecté et prêt !")
     try:
         synced = await bot.tree.sync()
